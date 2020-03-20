@@ -70,7 +70,7 @@ Atualmente, existem três estratégias diferentes de reinicialização disponív
 
 ## Especificação dos filhos
 
-Depois que o supervisor iniciou, ele deve saber como iniciar/parar/reiniciar seus filhos. Cada módulo filho deve ter uma função `child_spec/2` para definir esses comportamentos. Os macros `use GenServer`, `use Supervisor` e `use Agent` automaticamente definem esse método para nós (`SimpleQueue` usa `use GenServer`, então nós não precisamos modificar o módulo), mas se você precisar definir você mesmo `child_spec/1` deve return um map de opções:
+Depois que o supervisor iniciou, ele deve saber como iniciar/parar/reiniciar seus filhos. Cada módulo filho deve ter uma função `child_spec/2` para definir esses comportamentos. Os macros `use GenServer`, `use Supervisor` e `use Agent` automaticamente definem esse método para nós (`SimpleQueue` usa `use GenServer`, então nós não precisamos modificar o módulo), mas se você precisar definir você mesmo `child_spec/1` deve retornar um map de opções:
 
 ```elixir
 def child_spec(opts) do
